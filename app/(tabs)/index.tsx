@@ -1,8 +1,19 @@
 import React, { useState } from "react";
 import { Button, Text, View } from "react-native";
-
+import { StyleSheet } from "react-native";
 const HelloWorldApp = () => {
   const [count, setCount] = useState(0);
+  const styles = StyleSheet.create({
+    textStyle: {
+      fontSize: 24,
+      color: "red",
+      textShadowColor: "red",
+    },
+    otherStyle: {
+      position: "absolute",
+      justifyContent: "center",
+    },
+  });
   return (
     <View
       style={{
@@ -11,7 +22,7 @@ const HelloWorldApp = () => {
         alignItems: "center",
       }}
     >
-      <Text style={{ color: "white", fontSize: 24 }}>React Native Tuts</Text>
+      <Text style={styles.textStyle}>React Native Tuts</Text>
       <Button
         onPress={() => setCount((counter) => counter + 1)}
         title="Press Me"
@@ -20,4 +31,5 @@ const HelloWorldApp = () => {
     </View>
   );
 };
+
 export default HelloWorldApp;
